@@ -1,0 +1,11 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<testsuite name="StudentGradeTest" tests="5" failures="0" errors="0" timestamp="2013-12-23T07:28:08" hostname="Guan-PC" time="0.008">
+  <properties/>
+  <testcase name="should_print_all_passed_student_info_with_enter" classname="StudentGradeTest" time="0.006"/>
+  <testcase name="should_print_a_student_with_colon" classname="StudentGradeTest" time="0.0"/>
+  <testcase name="should_print_student_A_and_his_grade" classname="StudentGradeTest" time="0.0"/>
+  <testcase name="should_print_all_student_info_with_enter" classname="StudentGradeTest" time="0.0"/>
+  <testcase name="should_print_student_info_with_comma" classname="StudentGradeTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

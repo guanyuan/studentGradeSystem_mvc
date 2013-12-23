@@ -3,6 +3,10 @@ apply plugin: 'idea'
 
 repositories {
     mavenCentral()
+    mavenLocal()
+    maven {
+        url " "
+    }
 }
 
 dependencies {
