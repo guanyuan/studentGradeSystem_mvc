@@ -8,8 +8,9 @@
     <file path="/Dummy.txt" changelist="c987fa9b-baa1-4611-bc7b-27a57751d841" time="1387784607196" ignored="false" />
     <file path="/StudentGradeTest.java" changelist="c987fa9b-baa1-4611-bc7b-27a57751d841" time="1387799004672" ignored="false" />
     <file path="/StudentCollection.java" changelist="c987fa9b-baa1-4611-bc7b-27a57751d841" time="1387800214308" ignored="false" />
-    <file path="/StudentView.java" changelist="c987fa9b-baa1-4611-bc7b-27a57751d841" time="1387800317210" ignored="false" />
+    <file path="/StudentView.java" changelist="c987fa9b-baa1-4611-bc7b-27a57751d841" time="1387806381462" ignored="false" />
     <file path="/Student.java" changelist="c987fa9b-baa1-4611-bc7b-27a57751d841" time="1387790004264" ignored="false" />
+    <file path="/Conversion.java" changelist="c987fa9b-baa1-4611-bc7b-27a57751d841" time="1387805697519" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,16 +74,7 @@
       <file leaf-file-name="StudentGradeTest.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/StudentGradeTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="0" selection-start="583" selection-end="583" vertical-scroll-proportion="0.75797874">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StudentCollection.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/StudentCollection.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="0" selection-start="247" selection-end="247" vertical-scroll-proportion="0.0">
+            <state line="103" column="1" selection-start="3728" selection-end="3728" vertical-scroll-proportion="0.6462766">
               <folding />
             </state>
           </provider>
@@ -91,10 +83,26 @@
       <file leaf-file-name="StudentView.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/StudentView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="64" selection-start="388" selection-end="388" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="10" column="5" selection-start="333" selection-end="333" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StudentCollection.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/StudentCollection.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="13" selection-start="42" selection-end="42" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Conversion.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Conversion.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="13" selection-start="63" selection-end="63" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -123,8 +131,10 @@
         <option value="$PROJECT_DIR$/src/main/java/StudentGradeGroup.java" />
         <option value="$PROJECT_DIR$/src/test/java/StudentGradeTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/StudentCollection.java" />
-        <option value="$PROJECT_DIR$/src/main/java/StudentView.java" />
         <option value="$PROJECT_DIR$/src/main/java/Student.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Func.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Conversion.java" />
+        <option value="$PROJECT_DIR$/src/main/java/StudentView.java" />
       </list>
     </option>
   </component>
@@ -554,26 +564,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/StudentGradeTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/StudentCollection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="11" selection-start="162" selection-end="162" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/StudentView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="39" selection-start="970" selection-end="970" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -601,9 +595,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/StudentView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="39" selection-start="970" selection-end="970" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -631,15 +623,20 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/StudentView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="39" selection-start="970" selection-end="970" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Student.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="27" selection-start="363" selection-end="363" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Conversion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="13" selection-start="63" selection-end="63" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -651,25 +648,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/StudentView.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/StudentCollection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="64" selection-start="388" selection-end="388" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="2" column="13" selection-start="42" selection-end="42" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/StudentCollection.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/StudentView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="247" selection-end="247" vertical-scroll-proportion="0.0">
+        <state line="10" column="5" selection-start="333" selection-end="333" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/StudentGradeTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="583" selection-end="583" vertical-scroll-proportion="0.75797874">
+        <state line="103" column="1" selection-start="3728" selection-end="3728" vertical-scroll-proportion="0.6462766">
           <folding />
         </state>
       </provider>
