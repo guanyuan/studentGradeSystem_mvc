@@ -1,3 +1,8 @@
+package com.thoughtworks.ns.mvc;
+
+import com.thoughtworks.ns.mvc.Student;
+import com.thoughtworks.ns.mvc.StudentCollection;
+import com.thoughtworks.ns.mvc.StudentView;
 import org.junit.Before;
 import org.junit.Test;
 

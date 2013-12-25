@@ -1,3 +1,5 @@
+package com.thoughtworks.ns.mvc;
+
 import com.google.common.collect.ImmutableList;
 
 
