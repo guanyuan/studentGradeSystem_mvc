@@ -1,3 +1,5 @@
+package com.thoughtworks.ns.mvc;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -5,23 +7,22 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class StudentGradeTest {
-    Student studentA, studentB, studentC, studentD;
-    StudentCollection studentCollection;
-    StudentView studentView;
+    private Student studentA;
+    private Student studentD;
+    private StudentCollection studentCollection;
+    private StudentView studentView;
 
     @Before
     public void setUp() throws Exception {
         studentA = new Student("A", 100);
-        studentB = new Student("B", 80);
-        studentC = new Student("C", 59);
         studentD = new Student("D", 76);
         // student D is a Roman
         studentD.setRoman();
 
         studentCollection = new StudentCollection();
         studentCollection.add(studentA);
-        studentCollection.add(studentB);
-        studentCollection.add(studentC);
+        studentCollection.add(new Student("B", 80));
+        studentCollection.add(new Student("C", 59));
         studentView = new StudentView();
     }
 

@@ -1,3 +1,5 @@
+package com.thoughtworks.ns.mvc;
+
 import java.util.ArrayList;
 
 public class StudentCollection {

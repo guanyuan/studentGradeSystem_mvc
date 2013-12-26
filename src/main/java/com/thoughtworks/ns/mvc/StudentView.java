@@ -1,3 +1,5 @@
+package com.thoughtworks.ns.mvc;
+
 public class StudentView {
 
     public static int PASSING_GRADE = 60;
@@ -12,7 +14,7 @@ public class StudentView {
 
 
     public String printStudentsWithComma(StudentCollection studentCollection) {
-        //transform(studentCollection.studentList, Conversion.studentToCommaInfo());
+        //transform(studentCollection.studentList, com.thoughtworks.ns.mvc.Conversion.studentToCommaInfo());
         String result="";
         for (Student student : studentCollection.studentList) {
             result += student.getName() + "," + student.getGrade() + "\n";
