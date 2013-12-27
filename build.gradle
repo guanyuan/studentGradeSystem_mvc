@@ -10,20 +10,21 @@ repositories {
 }
 
 dependencies {
-  compile(
-    'com.google.guava:guava:15.0',
-  )
+    compile(
+            'com.google.guava:guava:15.0'
+    )
 
-  testCompile(
-    'junit:junit:4.11',
-  )
+    testCompile(
+            'junit:junit:4.11',
+            'org.mockito:mockito-all:1.9.5'
+    )
 }
 
 task wrapper(type: Wrapper) {
     gradleVersion = '1.8'
 }
 
-task createJavaProject << { 
-  sourceSets*.java.srcDirs*.each { it.mkdirs() } 
-  sourceSets*.resources.srcDirs*.each { it.mkdirs()} 
+task createJavaProject << {
+    sourceSets*.java.srcDirs*.each { it.mkdirs() }
+    sourceSets*.resources.srcDirs*.each { it.mkdirs() }
 } 
