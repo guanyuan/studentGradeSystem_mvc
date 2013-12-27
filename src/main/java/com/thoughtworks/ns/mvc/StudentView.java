@@ -1,8 +1,17 @@
 package com.thoughtworks.ns.mvc;
 
+import com.google.common.base.Function;
+import com.google.common.base.Joiner;
+import com.google.common.base.Predicate;
+
+import java.util.List;
+
+import static com.google.common.collect.FluentIterable.from;
+
 public class StudentView {
 
-    public static int PASSING_GRADE = 60;
+    private static final Joiner JOINER_ON_NEW_LINE = Joiner.on('\n');
+    private static int PASSING_GRADE = 60;
     
     public String printOneStudentWithComma(Student student) {
         return student.getName()+","+student.getGrade();
@@ -12,29 +21,46 @@ public class StudentView {
         return "{"+student.getName()+":"+student.getGrade()+"}";
     }
 
-
-    public String printStudentsWithComma(StudentCollection studentCollection) {
-        //transform(studentCollection.studentList, com.thoughtworks.ns.mvc.Conversion.studentToCommaInfo());
-        String result="";
-        for (Student student : studentCollection.studentList) {
-            result += student.getName() + "," + student.getGrade() + "\n";
-        }
-        return result;
+    public String printStudentsWithComma(List<Student> students) {
+        return joinOutputWithNewLine(
+                from(students)
+                        .transform(toCommaStyle())
+        );
     }
 
-    public String printPassedStudentsWithComma(StudentCollection studentCollection) {
-        String result = "";
-        for (Student student : studentCollection.studentList) {
-            if (student.getGrade() > PASSING_GRADE) {
-                result += student.getName() + "," + student.getGrade() + "\n";
+    private String joinOutputWithNewLine(Iterable<String> eachLine) {
+        return JOINER_ON_NEW_LINE.join(eachLine);
+    }
+
+    private Function<Student, String> toCommaStyle() {
+        return new Function<Student, String>() {
+            @Override
+            public String apply(Student input) {
+                return input.getName() + "," + input.getGrade();
             }
-        }
-        return result;
+        };
     }
 
-    public String printStudentsWithColon(StudentCollection studentCollection) {
+    public String printPassedStudentsWithComma(List<Student> students) {
+        return joinOutputWithNewLine(
+                from(students)
+                        .filter(passedStudent())
+                        .transform(toCommaStyle())
+        );
+    }
+
+    private Predicate<Student> passedStudent() {
+        return new Predicate<Student>() {
+            @Override
+            public boolean apply(Student input) {
+                return input.getGrade() >= PASSING_GRADE;
+            }
+        };
+    }
+
+    public String printStudentsWithColon(List<Student> students) {
         String result ="{";
-        for (Student student : studentCollection.studentList) {
+        for (Student student : students) {
             result += student.getName() + ":" + student.getGrade();
             result += ", ";
         }
@@ -42,21 +68,17 @@ public class StudentView {
         return  result + "}";
     }
 
-
-
     public String printOneRomanStudentWithComma(Student student) {
         return student.getName() + "," + Conversion.arabicToRoman(student.getGrade());
     }
-
 
     public String printOneRomanStudentWithColon(Student student) {
         return "{" + student.getName() + ":" + Conversion.arabicToRoman(student.getGrade()) + "}";
     }
 
-
-    public String printStudentsWithCommaByConcernRomans(StudentCollection studentCollection) {
+    public String printStudentsWithCommaByConcernRomans(List<Student> students) {
         String result ="";
-        for (Student student : studentCollection.studentList) {
+        for (Student student : students) {
             result += student.getName() + ",";
             if (student.isRoman()) {
                 result += Conversion.arabicToRoman(student.getGrade());
@@ -69,9 +91,9 @@ public class StudentView {
     }
 
 
-    public String printStudentsWithColonByConcernRomans(StudentCollection studentCollection) {
+    public String printStudentsWithColonByConcernRomans(List<Student> students) {
         String result ="{";
-        for (Student student : studentCollection.studentList) {
+        for (Student student : students) {
             result += student.getName() + ":";
             if (student.isRoman()) {
                 result += Conversion.arabicToRoman(student.getGrade());
@@ -84,9 +106,9 @@ public class StudentView {
         return result + "}";
     }
 
-    public String printPassedStudentsWithCommaByConcernRomans(StudentCollection studentCollection) {
+    public String printPassedStudentsWithCommaByConcernRomans(List<Student> students) {
         String result = "";
-        for (Student student : studentCollection.studentList) {
+        for (Student student : students) {
             if (student.getGrade() > PASSING_GRADE) {
                 result += student.getName() + ",";
                 if (student.isRoman()) {
@@ -100,9 +122,9 @@ public class StudentView {
         return result;
     }
 
-    public String printPassedStudentsWithColonByConcernRomans(StudentCollection studentCollection) {
+    public String printPassedStudentsWithColonByConcernRomans(List<Student> students) {
         String result = "{";
-        for (Student student : studentCollection.studentList) {
+        for (Student student : students) {
             if (student.getGrade() > PASSING_GRADE) {
                 result += student.getName() + ":";
                 if (student.isRoman()) {

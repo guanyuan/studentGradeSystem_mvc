@@ -3,13 +3,17 @@ package com.thoughtworks.ns.mvc;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.List;
+
+import static com.google.common.collect.ImmutableList.of;
+import static com.google.common.collect.Lists.newArrayList;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 public class StudentGradeTest {
     private Student studentA;
     private Student studentD;
-    private StudentCollection studentCollection;
+    private List<Student> studentCollection;
     private StudentView studentView;
 
     @Before
@@ -19,10 +23,11 @@ public class StudentGradeTest {
         // student D is a Roman
         studentD.setRoman();
 
-        studentCollection = new StudentCollection();
-        studentCollection.add(studentA);
-        studentCollection.add(new Student("B", 80));
-        studentCollection.add(new Student("C", 59));
+        studentCollection = newArrayList(of(
+                studentA,
+                new Student("B", 80),
+                new Student("C", 59)
+        ));
         studentView = new StudentView();
     }
 
@@ -36,14 +41,14 @@ public class StudentGradeTest {
     public void should_print_all_students_info_with_comma() throws Exception {
         String result = "A,100\n" +
                 "B,80\n" +
-                "C,59\n";
+                "C,59";
         assertThat(studentView.printStudentsWithComma(studentCollection), is(result));
     }
 
     @Test
     public void should_print_all_passed_student_info_with_comma() throws Exception {
         String result = "A,100\n" +
-                "B,80\n";
+                "B,80";
         assertThat(studentView.printPassedStudentsWithComma(studentCollection), is(result));
     }
 
