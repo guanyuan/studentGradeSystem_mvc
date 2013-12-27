@@ -18,3 +18,8 @@
 6. 不要把只在一个方法里面用到的变量提出来成为域变量，比如：studentB, studentC，他们只在setUp方法中用到了，应该转换成局部变量，更进一步，他们只是被放到了studentCollection中，应该内联。
 7. StudentCollection只是用来放多个Student，没有必要单独建一个类来放。
 8. 可以用Guava中的joiner来实现多行用\n分割
+9. MVC模式在于要有三层：Model, View, Controller。
+    - 你已经有Model了，就是Student。
+    - 你现在把所有的功能放到view里面去了，没有Controller，你可以有一个Controller，然后把不同的显示作为不同的view。我给你写了一个StudentController。
+    - 我给你建了一个View的接口，你可以用不同的实现类去实现这个接口（比如用逗号分割，用冒号分割，显示罗马数字等等，都可以作为一个单独的实现类）。
+    - 我给你开了个头，你可以按照这个方向自己去接着重构。可以一个测试一个测试的从StudentGradeTest移到StudentViewWithCommaTest中，然后再加新的View，再移测试。

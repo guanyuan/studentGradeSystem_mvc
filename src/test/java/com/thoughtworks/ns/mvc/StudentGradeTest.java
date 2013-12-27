@@ -14,7 +14,7 @@ public class StudentGradeTest {
     private Student studentA;
     private Student studentD;
     private List<Student> studentCollection;
-    private StudentView studentView;
+    private StudentViewWithComma studentViewWithComma;
 
     @Before
     public void setUp() throws Exception {
@@ -28,51 +28,37 @@ public class StudentGradeTest {
                 new Student("B", 80),
                 new Student("C", 59)
         ));
-        studentView = new StudentView();
-    }
-
-    @Test
-    public void should_print_a_student_info_with_comma() throws Exception {
-        String result = "A,100";
-        assertThat(studentView.printOneStudentWithComma(studentA), is(result));
-    }
-
-    @Test
-    public void should_print_all_students_info_with_comma() throws Exception {
-        String result = "A,100\n" +
-                "B,80\n" +
-                "C,59";
-        assertThat(studentView.printStudentsWithComma(studentCollection), is(result));
+        studentViewWithComma = new StudentViewWithComma();
     }
 
     @Test
     public void should_print_all_passed_student_info_with_comma() throws Exception {
         String result = "A,100\n" +
                 "B,80";
-        assertThat(studentView.printPassedStudentsWithComma(studentCollection), is(result));
+        assertThat(studentViewWithComma.printPassedStudentsWithComma(studentCollection), is(result));
     }
 
     @Test
     public void should_print_a_student_with_colon() throws Exception {
-        assertThat(studentView.printOneStudentWithColon(studentA), is("{A:100}"));
+        assertThat(studentViewWithComma.printOneStudentWithColon(studentA), is("{A:100}"));
     }
 
     @Test
     public void should_print_all_students_with_colon() throws Exception {
         String result = "{A:100, B:80, C:59}";
-        assertThat(studentView.printStudentsWithColon(studentCollection), is(result));
+        assertThat(studentViewWithComma.printStudentsWithColon(studentCollection), is(result));
     }
 
     @Test
     public void should_print_one_roman_student_with_comma() throws Exception {
         String result = "D,LXXVI";
-        assertThat(studentView.printOneRomanStudentWithComma(studentD), is(result));
+        assertThat(studentViewWithComma.printOneRomanStudentWithComma(studentD), is(result));
     }
 
     @Test
     public void should_print_one_roman_student_with_colon() throws Exception {
         String result = "{D:LXXVI}";
-        assertThat(studentView.printOneRomanStudentWithColon(studentD), is(result));
+        assertThat(studentViewWithComma.printOneRomanStudentWithColon(studentD), is(result));
     }
 
     @Test
@@ -82,14 +68,14 @@ public class StudentGradeTest {
                 "B,80\n" +
                 "C,59\n" +
                 "D,LXXVI\n";
-        assertThat(studentView.printStudentsWithCommaByConcernRomans(studentCollection),is(result));
+        assertThat(studentViewWithComma.printStudentsWithCommaByConcernRomans(studentCollection),is(result));
     }
 
     @Test
     public void should_print_all_students_with_colon_by_concerning_roman() throws Exception {
         studentCollection.add(studentD);
         String result = "{A:100, B:80, C:59, D:LXXVI}";
-        assertThat(studentView.printStudentsWithColonByConcernRomans(studentCollection),is(result));
+        assertThat(studentViewWithComma.printStudentsWithColonByConcernRomans(studentCollection),is(result));
     }
 
     @Test
@@ -98,13 +84,13 @@ public class StudentGradeTest {
         String result = "A,100\n" +
                 "B,80\n" +
                 "D,LXXVI\n";
-        assertThat(studentView.printPassedStudentsWithCommaByConcernRomans(studentCollection),is(result));
+        assertThat(studentViewWithComma.printPassedStudentsWithCommaByConcernRomans(studentCollection),is(result));
     }
 
     @Test
     public void should_print_all_passed_students_with_colon_by_concerning_roman() throws Exception {
         studentCollection.add(studentD);
         String result = "{A:100, B:80, D:LXXVI}";
-        assertThat(studentView.printPassedStudentsWithColonByConcernRomans(studentCollection),is(result));
+        assertThat(studentViewWithComma.printPassedStudentsWithColonByConcernRomans(studentCollection),is(result));
     }
 }

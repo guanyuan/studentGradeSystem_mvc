@@ -8,24 +8,26 @@ import java.util.List;
 
 import static com.google.common.collect.FluentIterable.from;
 
-public class StudentView {
+public class StudentViewWithComma implements View {
 
     private static final Joiner JOINER_ON_NEW_LINE = Joiner.on('\n');
     private static int PASSING_GRADE = 60;
-    
-    public String printOneStudentWithComma(Student student) {
+
+    @Override
+    public String printOneStudent(Student student) {
         return student.getName()+","+student.getGrade();
     }
 
-    public String printOneStudentWithColon(Student student) {
-        return "{"+student.getName()+":"+student.getGrade()+"}";
-    }
-
-    public String printStudentsWithComma(List<Student> students) {
+    @Override
+    public String printStudents(List<Student> students) {
         return joinOutputWithNewLine(
                 from(students)
                         .transform(toCommaStyle())
         );
+    }
+
+    public String printOneStudentWithColon(Student student) {
+        return "{"+student.getName()+":"+student.getGrade()+"}";
     }
 
     private String joinOutputWithNewLine(Iterable<String> eachLine) {
